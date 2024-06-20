@@ -4,23 +4,42 @@
 
 [ros guides](http://www.clearpathrobotics.com/assets/guides/melodic/ros/)
 
-## baisc
-
-ros的包管理rospack(查询是否安装某个包)
-
-	rospack list | grep rospy
-
-	https://index.ros.org/p/rospy/#noetic-overview
-
 ## 启动实验环境
 
 运行安装好ros环境的容器
 
 	drun --name rosdev -v $PWD:/ws ros:noetic-ros-base /bin/bash
 
-设置一下python的路径
+进入环境后设置一下python的路径
 
 	ln -s /usr/bin/python3 /usr/bin/python
+
+配置环境变量
+
+	source /opt/ros/$ROS_DISTRO/setup.bash
+
+配置完环境后会设置如下环境变量
+
+	echo $ROS_PACKAGE_PATH
+	/opt/ros/noetic/share
+
+## baisc
+
+### ros的包管理rospack
+
+查询是否安装某个包
+
+	rospack list | grep rospy
+
+	https://index.ros.org/p/rospy/#noetic-overview
+
+列出已安装的包
+
+	rospack list
+
+进入到对应包(比如这里的rospy)目录
+
+	roscd rospy
 
 ## HelloRobot
 
