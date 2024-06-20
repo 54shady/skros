@@ -261,4 +261,27 @@
 
 	cd ~/myws
 	source ./devel/setup.bash
+
+查询服务的情况(省去不相干)
+
+	rosservice list
+
+		/add_two_ints
+		/add_two_ints_server/get_loggers
+		/add_two_ints_server/set_logger_level
+		...
+
+	rosservice info /add_two_ints
+
+		Node: /add_two_ints_server
+		URI: rosrpc://4873126ff62d:33761
+		Type: beginner_tutorials/AddTwoInts
+		Args: a b
+
+使用命令请求服务
+
+	rosservice call /add_two_ints 11 22
+
+使用客户端请求服务
+
 	rosrun beginner_tutorials add_two_ints_client.py 11 22
